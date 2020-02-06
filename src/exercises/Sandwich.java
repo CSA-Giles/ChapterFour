@@ -12,14 +12,30 @@ public class Sandwich {
     GetAndSet serving = new GetAndSet();
 
 
-    public Sandwich(int slice, int serving, String bread, String filling){
+    public Sandwich(String bread, int slice, String filling, int serving){
         breadType = bread;
         calsPerSlice = slice;
         sandwichFilling = filling;
         calsPerServing = serving;
     }
-    public Sandwich(int slice, int serving, String bread){
-
+    public Sandwich(String bread, int slice, int serving){
+        breadType = bread;
+        calsPerSlice = slice;
+        sandwichFilling = "fried egg";
+        calsPerServing = serving;
     }
-    public Sandwich(int slice, int serving){}
+    public Sandwich(int slice, int serving){
+        breadType = "Rye";
+        calsPerSlice = slice;
+        sandwichFilling = "peanut butter";
+        calsPerServing = serving;
+    }
+    public void displaySandwich(){
+        bread.setBreadType(breadType);
+        slice.setCalPerSlice(calsPerSlice);
+        filling.setSandwichFilling(sandwichFilling);
+        serving.setCalPerServing(calsPerServing);
+        int totalCal = (slice.getCalPerSlice() * 2) + serving.getCalPerServing();
+        System.out.println("Here is a " + filling.getSandwichFilling() + " sandwich on " + bread.getBreadType() + " bread, with a total of " + totalCal + " calories.");
+    }
 }
